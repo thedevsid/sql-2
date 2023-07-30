@@ -1,0 +1,115 @@
+CASE STUDY 1:
+Sales Data Analysis, we'll use SQL to analyze the data and generate the required report. However, since SQL is a database query language and not a spreadsheet tool like Excel, we'll assume that the sales data is stored in a relational database table with the following columns: `Product`, `Region`, and `Sales`.
+
+We'll perform the following steps:
+
+Step 1: Data Cleaning (Assuming the data is already cleaned in the database)
+
+Step 2: Data Aggregation
+
+Step 3: Data Analysis
+
+Step 4: Recommendations
+
+Let's write the SQL queries for each step:
+
+Step 1: Data Cleaning (Assuming the data is already cleaned)
+
+No SQL query required for this step, as the data is already assumed to be clean.
+
+Step 2: Data Aggregation
+
+```sql
+-- Create a pivot table that shows the total sales by product and region
+SELECT
+    Product,
+    Region,
+    SUM(Sales) AS TotalSales
+FROM
+    SalesData
+GROUP BY
+    Product,
+    Region
+```
+
+Step 3: Data Analysis
+
+In this step, you can further analyze the aggregated data based on your specific questions and requirements. For example:
+
+- To identify the top-selling products:
+```sql
+SELECT
+    Product,
+    SUM(Sales) AS TotalSales
+FROM
+    SalesData
+GROUP BY
+    Product
+ORDER BY
+    TotalSales DESC
+LIMIT 10; -- Change the limit to get more top-selling products
+```
+
+- To identify the best-performing regions:
+```sql
+SELECT
+    Region,
+    SUM(Sales) AS TotalSales
+FROM
+    SalesData
+GROUP BY
+    Region
+ORDER BY
+    TotalSales DESC
+```
+
+- To look for trends in the data, you can use SQL window functions like `LAG` or `LEAD`.
+
+Step 4: Recommendations
+
+Based on your analysis, you can make recommendations using the insights gained from Step 3. For example:
+
+- Recommend the company focus on selling more of its top-selling products in the best-performing regions.
+
+- Suggest investing in marketing and advertising in regions where sales are lagging.
+
+- Propose strategies to improve sales in specific regions or for specific products.
+
+
+CASE STUDY 2:
+
+Now, let's move on to Case Study 2: Managing Inventory for a Small Business. Since the case study requires using Excel, we'll not use SQL for this and will assume the data is already in an Excel spreadsheet.
+
+Task 1: Creating an Inventory Sheet
+
+Create a new sheet in the workbook called "Inventory" and populate it with data.
+
+Task 2: Creating a Sales Sheet
+
+Create a new sheet in the workbook called "Sales" and populate it with data.
+
+Task 3: Calculating Profit per Sale
+
+In the "Sales" sheet, create a new column called "Profit per Sale" and use a formula to calculate the profit for each sale. Assuming the Cost Price is in column C and the Sale Price is in column D, the formula for the "Profit per Sale" column (E) would be: `=D2 - C2` (assuming the data starts from row 2).
+
+Task 4: Total Profit Calculation
+
+Create a new sheet in the workbook called "Profit Summary." Use Excel's `SUMIFS` function to calculate the total profit made on each product based on the data from the "Sales" sheet. For example, assuming "Product Name" is in column A, "Quantity Sold" is in column B, "Sale Price" is in column D, and "Cost Price" is in column C, the formula in cell E2 of the "Profit Summary" sheet would be: `=SUMIFS(Sales!E:E, Sales!A:A, A2)`
+
+Task 5: Filtering and Sorting Data
+
+You can add filtering and sorting functionality to the tables on the "Inventory" and "Sales" sheets using Excel's built-in features. Select the table and then go to the "Data" tab in Excel, where you can use the "Filter" and "Sort" options.
+
+Task 6: Creating Visualizations
+
+On the "Profit Summary" sheet, you can create charts and graphs to visually represent the profits made on each product using Excel's charting tools.
+
+Task 7: Updating Inventory
+
+Create a form or input section on the "Inventory" sheet that allows the business owner to update the quantity of each product in stock. This can be done using Excel's data validation feature or by creating a simple input form using VBA (Visual Basic for Applications).
+
+Task 8: Generating Reports
+
+Create a report on the "Profit Summary" sheet that summarizes the profits made on each product and the total profit made by the business. This report can be designed using Excel's formatting options to make it visually appealing and easy to understand. Ensure that the report is automatically updated as new sales are added to the "Sales" sheet, as we've used dynamic formulas to calculate the profits in Task 4.
+
+By completing these tasks, you will have helped the business owner efficiently manage their inventory and track their profits using Excel.
